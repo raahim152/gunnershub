@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: arsenal_db
+    environment:
+      POSTGRES_USER: arsenal_user
+      POSTGRES_PASSWORD: arsenal_password
+      POSTGRES_DB: gunners_db
+    volumes:
+      - arsenal_pg_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - gunners_network
+
+  web:
+    build: .
+    container_name: arsenal_web
+    ports:
+      - "80:3000"
+    environment:
+      - DB_USER=arsenal_user
+      - DB_HOST=db
+      - DB_NAME=gunners_db
+      - DB_PASSWORD=arsenal_password
+      - DB_PORT=5432
+    depends_on:
+      - db
+    networks:
+      - gunners_network
+
+volumes:
+  arsenal_pg_data:
+
+networks:
+  gunners_network:
+    driver: bridge

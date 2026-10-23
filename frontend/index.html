@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gunners Matchday Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hero Banner -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>🔴⚪ Gunners Matchday Hub ⚪🔴</h1>
+            <p>North London is Red. Submit your match predictions below.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Match Card -->
+        <section class="match-card">
+            <h2>Next Fixture</h2>
+            <div class="teams">
+                <div class="team">
+                    <div class="badge badge-arsenal">AFC</div>
+                    <h3>Arsenal</h3>
+                </div>
+                <div class="vs">
+                    <span>VS</span>
+                    <small>Emirates Stadium</small>
+                </div>
+                <div class="team">
+                    <div class="badge badge-spurs">THFC</div>
+                    <h3>Tottenham</h3>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid-layout">
+            <!-- Form Section -->
+            <section class="form-section card">
+                <h2>Submit Your Prediction</h2>
+                <form onsubmit="event.preventDefault(); addPrediction();">
+                    <label for="username">Your Name</label>
+                    <input type="text" id="username" placeholder="e.g., Gooner99" required>
+                    
+                    <label for="prediction">Score Prediction</label>
+                    <input type="text" id="prediction" placeholder="e.g., Arsenal 3 - 0 Spurs" required>
+                    
+                    <button type="submit">Submit Prediction</button>
+                </form>
+            </section>
+
+            <!-- List Section -->
+            <section class="list-section card">
+                <h2>Fan Predictions</h2>
+                <ul id="prediction-list">
+                    <!-- Predictions will load here -->
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>COYG - Come On You Gunners! | DevOps Lab Project</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

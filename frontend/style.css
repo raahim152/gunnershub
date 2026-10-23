@@ -1,0 +1,205 @@
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hero Banner */
+.hero {
+    background: linear-gradient(135deg, #EF0107 0%, #9c0004 100%);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Main Container */
+.container {
+    max-width: 900px;
+    margin: -30px auto 40px auto;
+    padding: 0 20px;
+}
+
+/* Match Card */
+.match-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    border-top: 5px solid #023474;
+}
+
+.match-card h2 {
+    color: #023474;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+}
+
+.teams {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.team h3 {
+    margin-top: 10px;
+    color: #023474;
+}
+
+.badge {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    margin: 0 auto;
+}
+
+.badge-arsenal { background-color: #EF0107; }
+.badge-spurs { background-color: #132257; } /* Spurs Navy */
+
+.vs {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: #EF0107;
+    font-size: 1.5rem;
+}
+
+.vs small {
+    font-size: 0.7rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Grid Layout for Form and List */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+    color: #EF0107;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #f0f2f5;
+    padding-bottom: 10px;
+}
+
+/* Form Styles */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #EF0107;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #EF0107;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #c40006;
+}
+
+/* List Styles */
+#prediction-list {
+    list-style-type: none;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#prediction-list li {
+    background: #f9f9f9;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-left: 4px solid #EF0107;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    animation: fadeIn 0.3s ease-in;
+}
+
+#prediction-list li span {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}

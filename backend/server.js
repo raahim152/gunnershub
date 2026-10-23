@@ -49,6 +49,15 @@ app.get('/health', (req, res) => {
     res.status(200).send('OK');
 });
 
+// Endpoint to identify which instance handled the request
+app.get('/api/whoami', (req, res) => {
+    const os = require('os');
+    res.json({ 
+        hostname: os.hostname(),
+        timestamp: new Date().toISOString()
+    });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

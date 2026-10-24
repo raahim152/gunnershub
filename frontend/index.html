@@ -7,61 +7,51 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Hero Banner -->
     <header class="hero">
         <div class="hero-content">
             <h1>🔴⚪ Gunners Matchday Hub ⚪🔴</h1>
-            <p>North London is Red. Submit your match predictions below.</p>
+            <p>Predict the scores. Climb the leaderboard. COYG.</p>
         </div>
     </header>
 
     <main class="container">
-        <!-- Match Card -->
-        <section class="match-card">
-            <h2>Next Fixture</h2>
-            <div class="teams">
-                <div class="team">
-                    <div class="badge badge-arsenal">AFC</div>
-                    <h3>Arsenal</h3>
-                </div>
-                <div class="vs">
-                    <span>VS</span>
-                    <small>Emirates Stadium</small>
-                </div>
-                <div class="team">
-                    <div class="badge badge-spurs">THFC</div>
-                    <h3>Tottenham</h3>
-                </div>
+        <nav class="tabs">
+            <button class="tab-btn active" onclick="showTab('fixtures')">Fixtures & Predictions</button>
+            <button class="tab-btn" onclick="showTab('leaderboard')">Leaderboard</button>
+        </nav>
+
+        <!-- FIXTURES TAB -->
+        <section id="fixtures-tab" class="tab-content active">
+            <div id="fixtures-list">
+                <!-- Rendered by app.js -->
             </div>
         </section>
 
-        <div class="grid-layout">
-            <!-- Form Section -->
-            <section class="form-section card">
-                <h2>Submit Your Prediction</h2>
-                <form onsubmit="event.preventDefault(); addPrediction();">
-                    <label for="username">Your Name</label>
-                    <input type="text" id="username" placeholder="e.g., Gooner99" required>
-                    
-                    <label for="prediction">Score Prediction</label>
-                    <input type="text" id="prediction" placeholder="e.g., Arsenal 3 - 0 Spurs" required>
-                    
-                    <button type="submit">Submit Prediction</button>
-                </form>
-            </section>
-
-            <!-- List Section -->
-            <section class="list-section card">
-                <h2>Fan Predictions</h2>
-                <ul id="prediction-list">
-                    <!-- Predictions will load here -->
-                </ul>
-            </section>
+        <!-- LEADERBOARD TAB -->
+        <section id="leaderboard-tab" class="tab-content">
+    <div class="card">
+        <h2>🏆 Fan Leaderboard</h2>
+        <p class="muted">Exact score = 3 pts · Correct winner = 1 pt · Wrong = 0 pts</p>
+        <table id="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fan</th>
+                    <th>Predictions</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody><!-- Rendered by app.js --></tbody>
+        </table>
+        <div class="admin-tools" style="margin-top: 16px;">
+            <button class="btn-admin" onclick="resetDemo()">🔄 Reset Demo Data</button>
         </div>
+    </div>
+</section>
     </main>
 
     <footer>
-        <p>COYG - Come On You Gunners! | DevOps Lab Project</p>
+        <p>COYG — Come On You Gunners! | DevOps Lab Project</p>
     </footer>
 
     <script src="app.js"></script>
